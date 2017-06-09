@@ -146,7 +146,15 @@
         [super paste:sender];
     }
 }
-
+- (void)setPlaceHolderInsets:(UIEdgeInsets)placeHolderInsets
+{
+    if (UIEdgeInsetsEqualToEdgeInsets(placeHolderInsets, _placeHolderInsets)) {
+        return;
+    }
+    
+    _placeHolderInsets = placeHolderInsets;
+    [self setNeedsDisplay];
+}
 #pragma mark - Drawing
 
 - (void)drawRect:(CGRect)rect
@@ -155,8 +163,8 @@
 
     if ([self.text length] == 0 && self.placeHolder) {
         [self.placeHolderTextColor set];
-
-        [self.placeHolder drawInRect:CGRectInset(rect, 7.0f, 5.0f)
+        
+        [self.placeHolder drawInRect:UIEdgeInsetsInsetRect(rect, self.placeHolderInsets)
                       withAttributes:[self jsq_placeholderTextAttributes]];
     }
 }
