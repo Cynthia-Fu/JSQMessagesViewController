@@ -278,6 +278,8 @@ JSQMessagesKeyboardControllerDelegate>
 
     [super viewWillAppear:animated];
     self.toolbarHeightConstraint.constant = self.inputToolbar.preferredDefaultHeight;
+    //Update view layout after changing the height of the inputToolBar
+    [self jsq_setToolbarBottomLayoutGuideConstant:0];
     [self.view layoutIfNeeded];
     [self.collectionView.collectionViewLayout invalidateLayout];
 
