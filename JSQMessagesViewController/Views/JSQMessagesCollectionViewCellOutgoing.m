@@ -17,6 +17,10 @@
 //
 
 #import "JSQMessagesCollectionViewCellOutgoing.h"
+@interface JSQMessagesCollectionViewCellOutgoing(){
+}
+@property (unsafe_unretained, nonatomic) IBOutlet UIActivityIndicatorView *messageloadingIndicator;
+@end
 
 @implementation JSQMessagesCollectionViewCellOutgoing
 
@@ -28,5 +32,12 @@
     self.messageBubbleTopLabel.textAlignment = NSTextAlignmentRight;
     self.cellBottomLabel.textAlignment = NSTextAlignmentRight;
 }
-
+-(void)showLoading{
+    self.messageloadingIndicator.hidden = NO;
+    [self.messageloadingIndicator startAnimating];
+}
+-(void)hideLoading{
+    [self.messageloadingIndicator stopAnimating];
+    self.messageloadingIndicator.hidden = YES;
+}
 @end

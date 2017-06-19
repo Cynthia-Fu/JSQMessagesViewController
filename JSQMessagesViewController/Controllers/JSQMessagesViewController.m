@@ -603,6 +603,14 @@ JSQMessagesKeyboardControllerDelegate>
             }
         }
     }
+    if(isOutgoingMessage){
+        JSQMessagesCollectionViewCellOutgoing *oCell = (JSQMessagesCollectionViewCellOutgoing *)cell;
+        if(messageItem.sending){
+            [oCell showLoading];
+        }else{
+            [oCell hideLoading];
+        }
+    }
 
     cell.cellTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellTopLabelAtIndexPath:indexPath];
     cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];

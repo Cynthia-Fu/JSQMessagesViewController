@@ -83,6 +83,7 @@
 
 @optional
 
+- (BOOL)sending;
 /**
  *  @return The body text of the message.
  *
