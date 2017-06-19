@@ -603,7 +603,6 @@ JSQMessagesKeyboardControllerDelegate>
             }
         }
     }
-
     cell.cellTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellTopLabelAtIndexPath:indexPath];
     cell.messageBubbleTopLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForMessageBubbleTopLabelAtIndexPath:indexPath];
     cell.cellBottomLabel.attributedText = [collectionView.dataSource collectionView:collectionView attributedTextForCellBottomLabelAtIndexPath:indexPath];
@@ -612,6 +611,12 @@ JSQMessagesKeyboardControllerDelegate>
 
     if (isOutgoingMessage) {
         cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, bubbleTopLabelInset);
+        JSQMessagesCollectionViewCellOutgoing *oCell = (JSQMessagesCollectionViewCellOutgoing *)cell;
+        if(messageItem.sending){
+            [oCell showLoading];
+        }else{
+            [oCell hideLoading];
+        }
     }
     else {
         cell.messageBubbleTopLabel.textInsets = UIEdgeInsetsMake(0.0f, bubbleTopLabelInset, 0.0f, 0.0f);
