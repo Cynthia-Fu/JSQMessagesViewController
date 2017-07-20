@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
@@ -7,6 +8,13 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+=======
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+>>>>>>> jessesquires/develop
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -29,9 +37,18 @@
                         <constraint firstAttribute="width" constant="50" id="yde-S9-dHe"/>
                     </constraints>
                 </view>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dm4-NT-mvr" customClass="JSQMessagesComposerTextView">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" verticalCompressionResistancePriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dm4-NT-mvr" customClass="JSQMessagesComposerTextView">
                     <rect key="frame" x="50" y="7" width="204" height="30"/>
+<<<<<<< HEAD
                     <color key="backgroundColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+=======
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="7g1-OD-zlc"/>
+                        <constraint firstAttribute="height" constant="30" id="dGy-JG-NVD"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="150" id="dck-S7-jK5"/>
+                    </constraints>
+>>>>>>> jessesquires/develop
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
